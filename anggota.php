@@ -1,6 +1,3 @@
-<!--	TAMBAHAN	-->
-<!-- BOSSS -->
-
 <!DOCTYPE html>
 <html>
 <head>
