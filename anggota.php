@@ -7,7 +7,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<?php require_once 'process.php'; ?>
+<?php require_once 'process.php'; ?>
 
 	<?php
 
@@ -32,7 +32,40 @@
 <h2>Daftar Anggota Inazuma Eleven FC</h2>
 <br>
 <br>
+<style>
+	.table{
+		border-collapse: collapse;
+		margin: 25px 0;
+		font-size: 0.9em;
+		min-width: 400px;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	}
 
+	.table thead tr{
+		background-color: #009879;
+		color: #ffffff
+		text-align: left;
+		font-weight: bold;
+	}
+
+	.table th, table td;{
+		padding: 12px 15px;
+	}
+
+	.table tbody tr {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	.table tbody tr:nth-of-type(even){
+		background-color: #f3f3f3; 
+	}
+
+	.table tbody tr:last-of-type {
+		border-bottom: 2px solid #009879;
+	}
+</style>
 
 	<div class="row justify-content-center">
 		<table class="table">
@@ -57,13 +90,9 @@
 						class="btn btn-info">Edit</a>
 					<a href="process.php?delete=<?php echo $row['id'];?>"
 						class="btn btn-danger">Delete</a>
-
-				</td>
-			</tr>
-		<?php endwhile; ?>
-	</table>
+<?php endwhile; ?>
 	</div>
-	<?php
+<?php
 
 		function pre_r( $array ) {
 		echo '<pre>';
@@ -75,25 +104,30 @@
 	<div class="row justify-content-center">
 	<form action="process.php" method="POST">
 		<input type="hidden" name="id" value="<?php echo $id; ?>">
-
+<tbody>
+	<th>
 		<div class="form-group">
-			<label>Name</label>
 				<input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Masukkan Nama">
 		</div>
+	</th>
+	<th>
 		<div class="form-group">
-			<label>Nomor Punggung</label>
 			<input type="number" name="nomor_punggung" class="form-control" value="<?php echo $nomor_punggung; ?>" placeholder="Masukkan Nomor Punggung">
 		</div>
+	</th>
+	<th>
 		<div class="form-group">
-			<label>Posisi</label>
 			<input type="text" name="posisi" class="form-control" value="<?php echo $posisi; ?>" placeholder="Masukkan Posisi">
 		</div>
+	</th>
+	<th>
 		<div class="form-group">
-			<label>Asal Negara</label>
 			<input type="text" name="asal_negara" class="form-control" value="<?php echo $asal_negara; ?>" placeholder="Masukkan Asal Negara">
 		</div>
+	</th>
+	<th>
 		<div class="form-group">
-			<?php 
+		<?php 
 			if ($update == true):
 			?>
 				<button type = "submit" class="btn btn-info" name="update">Update</button>
@@ -101,8 +135,10 @@
 				<button type = "submit" class="btn btn-primary" name="save">Tambah</button>
 			<?php endif ;?>
 		</div>
+	</th>
 	</form>
 	</div>
 	</div>
+</table>
 </body>
 </html>
