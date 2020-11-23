@@ -32,7 +32,7 @@
 <h2>Daftar Anggota Inazuma Eleven FC</h2>
 <br>
 <br>
-<style> /*penambahan css */
+<style>
 	.table{
 		border-collapse: collapse;
 		margin: 25px 0;
@@ -88,8 +88,7 @@
 				<td>
 					<a href="anggota.php?edit=<?php echo $row['id']; ?>"
 						class="btn btn-info">Edit</a>
-					<a href="process.php?delete=<?php echo $row['id'];?>"
-						class="btn btn-danger">Delete</a>
+					<a href="process.php?delete=<?php echo $row['id'];?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger">Delete</a>
 <?php endwhile; ?>
 	</div>
 <?php
