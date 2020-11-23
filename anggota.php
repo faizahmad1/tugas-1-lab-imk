@@ -32,7 +32,7 @@
 <h2>Daftar Anggota Inazuma Eleven FC</h2>
 <br>
 <br>
-<style>
+<style> /*penambahan css */
 	.table{
 		border-collapse: collapse;
 		margin: 25px 0;
